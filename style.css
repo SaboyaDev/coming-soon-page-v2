@@ -13,7 +13,6 @@
 	font-weight: bold;
 	font-style: normal;
 }
-
 :root {
 	--dark-gray: #333;
 	--gray: #423a3a;
@@ -22,14 +21,7 @@
 	--light: #fff;
 	--padding: 2.5rem;
 	--margin: 2.5rem;
-	--padding: 2.5rem;
 }
-
-/* btn
-  background: rgb(115,115,115);
-background: linear-gradient(168deg, rgba(115,115,115,1) 0%, rgba(0,0,0,1) 90%);
-*/
-
 html {
 	font-size: 62.5%;
 }
@@ -37,17 +29,17 @@ body {
 	font-size: 1.6rem;
 	font-family: AdiHaus;
 }
-
+/* Mobile */
 .mobile-container {
-	max-inline-size: 50rem;
+	max-inline-size: 40rem;
 	margin-inline: auto;
 }
 .logo-container {
 	display: flex;
 	justify-content: center;
-	margin-block: var(--margin);
+	padding-block: var(--margin);
+	padding-inline: var(--padding);
 }
-
 .hero-section {
 	inline-size: 100%;
 	block-size: 30rem;
@@ -55,13 +47,12 @@ body {
 	background-size: cover;
 	background-position: center;
 }
-
+/* Main Section */
 main {
 	text-align: center;
-	padding-inline: 2.5rem;
+	padding-inline: var(--padding);
 	margin-block: var(--margin);
 }
-
 .main-header h1 {
 	font-size: 4.8rem;
 	text-transform: uppercase;
@@ -75,9 +66,77 @@ main {
 .main-header h1:nth-of-type(2) {
 	font-weight: 700;
 	line-height: 5rem;
+	margin-block-start: 1.5rem;
 	margin-block-end: var(--margin);
 }
 .main-content {
-	padding-block-end: var(--margin);
+	padding-block-end: var(--padding);
 	line-height: 2.8rem;
+}
+/* Form */
+/* ---------------------------------- */
+.form-container {
+	display: flex;
+	padding-block-end: var(--margin);
+}
+.form-container input {
+	box-sizing: border-box;
+	outline: none;
+	padding: 1.7rem var(--padding);
+}
+input[type='email'] {
+	flex: 1;
+	border: 1px solid var(--light-gray);
+	border-right: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+input[type='email']:focus {
+	border: 2px solid var(--light-gray);
+	border-right: none;
+}
+input[type='submit'] {
+	background: rgb(115, 115, 115);
+	background: linear-gradient(
+		168deg,
+		rgba(115, 115, 115, 1) 0%,
+		rgba(0, 0, 0, 1) 90%
+	);
+	color: var(--light);
+	font-weight: 700;
+	font-size: 1.8rem;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+/* Desktop */
+@media (min-width: 640px) {
+	body {
+		background-image: url('https://assets.codepen.io/6060109/waves.png');
+		background-size: cover;
+		background-position: center;
+	}
+	.outer-container {
+		max-width: 150rem;
+		height: 100vh;
+		display: flex;
+	}
+	.left,
+	.right {
+		inline-size: 50%;
+	}
+	.hero-section {
+		display: none;
+	}
+	.logo-container {
+		justify-content: start;
+	}
+	.mobile-container main {
+		text-align: left;
+		margin-block-start: 11rem;
+	}
+	.right {
+		background-image: url('https://assets.codepen.io/6060109/shoes.png');
+		background-size: cover;
+		background-position: center;
+	}
 }
